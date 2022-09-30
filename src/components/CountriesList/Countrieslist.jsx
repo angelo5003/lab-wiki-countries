@@ -2,11 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Countrieslist = ({ country }) => {
-  console.log(
-    `country from countrieslist component:`,
+  console.log(`country from countrieslist component:`, country);
 
-    country
-  );
   return (
     <div className="container">
       <div className="row">
@@ -19,7 +16,7 @@ const Countrieslist = ({ country }) => {
               return (
                 <Link
                   key={country.name.common}
-                  to={`${country.alpha3Code}`}
+                  to={`/${country.name.official}`}
                   className="list-group-item list-group-item-action"
                 >
                   <img

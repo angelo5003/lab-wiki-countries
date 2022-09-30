@@ -1,9 +1,12 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 const Countrydetails = ({ country }) => {
+  const countryParams = useParams();
+
   return (
     <div className="col-7">
-      <h1>France</h1>
+      <h1>{countryParams.name}</h1>
       <table className="table">
         <thead></thead>
         <tbody>

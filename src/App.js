@@ -16,7 +16,7 @@ function App() {
           <Countrieslist country={countryList} />
           <Routes>
             <Route
-              path="/:id"
+              path="/:name"
               element={<Countrydetails country={countryList} />}
             />
           </Routes>
