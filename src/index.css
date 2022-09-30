@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.flag-icons {
+  height: 30px;
+  margin-right: 20px;
+}

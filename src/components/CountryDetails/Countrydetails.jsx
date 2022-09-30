@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Countrydetails = () => {
+const Countrydetails = ({ country }) => {
   return (
     <div className="col-7">
       <h1>France</h1>
