@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Countrydetails = ({ country }) => {
   const countryParams = useParams();
@@ -12,12 +12,12 @@ const Countrydetails = ({ country }) => {
         <tbody>
           <tr>
             <td style={{ width: '30%' }}>Capital</td>
-            <td>Paris</td>
+            <td>{countryParams.capital}</td>
           </tr>
           <tr>
             <td>Area</td>
             <td>
-              551695 km
+              {countryParams.area} km
               <sup>2</sup>
             </td>
           </tr>
@@ -26,28 +26,7 @@ const Countrydetails = ({ country }) => {
             <td>
               <ul>
                 <li>
-                  <a href="/AND">Andorra</a>
-                </li>
-                <li>
-                  <a href="/BEL">Belgium</a>
-                </li>
-                <li>
-                  <a href="/DEU">Germany</a>
-                </li>
-                <li>
-                  <a href="/ITA">Italy</a>
-                </li>
-                <li>
-                  <a href="/LUX">Luxembourg</a>
-                </li>
-                <li>
-                  <a href="/MCO">Monaco</a>
-                </li>
-                <li>
-                  <a href="/ESP">Spain</a>
-                </li>
-                <li>
-                  <a href="/CHE">Switzerland</a>
+                  <Link>{countryParams.borders}</Link>
                 </li>
               </ul>
             </td>
