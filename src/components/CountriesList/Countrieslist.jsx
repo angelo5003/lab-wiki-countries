@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Countrieslist = ({ country }) => {
-  console.log(`country from countrieslist component:`, country);
-
   return (
     <div className="container">
       <div className="row">
@@ -16,7 +14,7 @@ const Countrieslist = ({ country }) => {
               return (
                 <Link
                   key={country.name.common}
-                  to={`/${country.name.official}/${country.capital}/${country.area}/${country.borders}`}
+                  to={`/${country.name.common}/${country.capital}/${country.area}/${country.borders}`}
                   className="list-group-item list-group-item-action"
                 >
                   <img
