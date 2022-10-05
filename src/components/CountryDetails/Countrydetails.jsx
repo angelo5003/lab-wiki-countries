@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-const Countrydetails = ({ country }) => {
+const Countrydetails = ({ countryList }) => {
   const { id } = useParams();
-  console.log(`hello froim the country details`, country);
 
   return (
     <div className="col-7">
-      {country
+      {countryList
         .filter((newCountry) => {
           return newCountry._id === id;
         })
@@ -33,9 +32,13 @@ const Countrydetails = ({ country }) => {
                     <td>Borders</td>
                     <td>
                       <ul>
-                        <li>
-                          <Link>{country.borders}</Link>
-                        </li>
+                        {country.borders.map((border) => {
+                          return (
+                            <li key={border}>
+                              <Link>{border}</Link>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </td>
                   </tr>

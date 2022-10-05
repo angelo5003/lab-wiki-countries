@@ -30,7 +30,7 @@ function App() {
           <Routes>
             <Route
               path="/country/:id"
-              element={<Countrydetails country={countryList} />}
+              element={<Countrydetails countryList={countryList} />}
             />
           </Routes>
         </div>
