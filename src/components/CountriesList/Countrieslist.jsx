@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import { useNavigate } from 'react-router-dom';
 
 const Countrieslist = ({ country }) => {
+  const navigate = useNavigate();
   return (
     <div className="container">
       <div className="row">
@@ -12,10 +14,12 @@ const Countrieslist = ({ country }) => {
           <div className="list-group">
             {country.map((country) => {
               return (
-                <Link
-                  key={country.name.common}
-                  to={`/${country.name.common}/${country.capital}/${country.area}/${country.borders}`}
+                <div
+                  key={country._id}
                   className="list-group-item list-group-item-action"
+                  onClick={() => {
+                    navigate(`/country/${country._id}`);
+                  }}
                 >
                   <img
                     src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`}
@@ -23,7 +27,7 @@ const Countrieslist = ({ country }) => {
                     className="flag-icons"
                   />
                   <span>{country.name.common}</span>
-                </Link>
+                </div>
               );
             })}
           </div>

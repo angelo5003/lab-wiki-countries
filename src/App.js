@@ -3,7 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import Countrieslist from './components/CountriesList/Countrieslist';
 import Countrydetails from './components/CountryDetails/Countrydetails';
 import { Routes, Route } from 'react-router-dom';
-// import countries from './countries.json';
+
 import axios from 'axios';
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
           <Countrieslist country={countryList} />
           <Routes>
             <Route
-              path="/:name/:capital/:area/:borders"
+              path="/country/:id"
               element={<Countrydetails country={countryList} />}
             />
           </Routes>
